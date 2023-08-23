@@ -11,6 +11,7 @@ add_mlir_library(MLIRPresburger
   Simplex.cpp
   SlowMPInt.cpp
   Utils.cpp
+  dependence.cpp
 
   LINK_LIBS PUBLIC
   MLIRSupport

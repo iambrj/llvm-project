@@ -176,6 +176,7 @@ bool mlir::affine::isLoopMemoryParallel(AffineForOp forOp) {
     for (auto *dstOp : loadAndStoreOps) {
       MemRefAccess dstAccess(dstOp);
       DependenceResult result =
+        // TODO: replace this with may analysis
           checkMemrefAccessDependence(srcAccess, dstAccess, depth);
       if (result.value != DependenceResult::NoDependence)
         return false;
